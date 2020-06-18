@@ -6,7 +6,7 @@
 /*   By: lsjoberg <lsjoberg@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/18 17:46:30 by lsjoberg          #+#    #+#             */
-/*   Updated: 2020/06/05 19:40:43 by lsjoberg         ###   ########.fr       */
+/*   Updated: 2020/06/18 14:43:47 by lsjoberg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@
 static void		put_pixel(t_fractol *f, int depth)
 {
 	int			pos;
-	
+
 	pos = (f->fractal.height + (f->fractal.width * WIN_WIDTH)) * 4;
 	if (f->fractal.height < WIN_WIDTH \
 		&& f->fractal.width < WIN_HEIGHT \
@@ -36,7 +36,7 @@ static void		put_pixel(t_fractol *f, int depth)
 	{
 		f->image.data[pos] = f->color.red + (depth * 2.42);
 		f->image.data[pos + 1] = f->color.green + (depth * 2.42);
-		f->image.data[pos + 2] = f->color.blue + (depth * 2.42);	
+		f->image.data[pos + 2] = f->color.blue + (depth * 2.42);
 	}
 }
 
@@ -61,14 +61,14 @@ static void		*draw_fractal(void *tab)
 		while (frac->fractal.width < frac->fractal.limit)
 		{
 			depth = (frac->fractal.type == 1) ? mandelbrot(frac) : depth;
-			// depth = (frac->fractal.type == 2) ? julia(frac) : depth;
+			depth = (frac->fractal.type == 2) ? julia(frac) : depth;
+			depth = (frac->fractal.type == 3) ? burningship(frac) : depth;
 			put_pixel(frac, depth);
 			frac->fractal.width += 1;
 		}
 		frac->fractal.height += 1;
 	}
 	return (tab);
-	
 }
 
 /*
@@ -109,7 +109,7 @@ void			frac_pthread(t_fractol *f)
 ** the parameters of the fractals (ci, and cr).
 */
 
-int			f_manipulate(int x, int y, t_fractol *f)
+int				f_manipulate(int x, int y, t_fractol *f)
 {
 	if (f->mouse.state == 1 && (x > 0 && y > 0) \
 		&& (x < WIN_WIDTH && y < WIN_HEIGHT))

@@ -6,19 +6,41 @@
 /*   By: lsjoberg <lsjoberg@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/17 20:57:14 by lsjoberg          #+#    #+#             */
-/*   Updated: 2020/06/08 15:34:15 by lsjoberg         ###   ########.fr       */
+/*   Updated: 2020/06/18 16:12:18 by lsjoberg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/fractol.h"
 
+static void	f_usage()
+{
+	ft_putstr("Usage: ");
+	ft_putstr("./fractol mandelbrot | julia | burningship\n");
+	ft_putendl("Keys:");
+	ft_putendl("\t[E]               -> Zoom in");
+	ft_putendl("\t[Q]               -> Zoom out");
+	ft_putendl("\t[Z]               -> Iterations++");
+	ft_putendl("\t[X]               -> Iterations--");
+	ft_putendl("\t[R]               -> Reset values");
+	ft_putendl("\t[SPACE]           -> Colorize");
+	ft_putendl("\t[W][A][S][D]      -> Move");
+	ft_putendl("\t[ESC]             -> Exit");
+	ft_putendl("Mouse:");
+	ft_putendl("\t[SCROLL]          -> Zoom");
+	ft_putendl("\t[RIGHT CLK]       -> Colorize");
+	ft_putendl("\t[MIDDLE CLK]      -> Reset values");
+	ft_putendl("\t[LEFT CLK]        -> Manipulate fractal");
+}
+
 static int	selectf(char *arg, t_fractol *f)
 {
-    f->fractal.type = 0;
+	f->fractal.type = 0;
 	if (ft_strequ(arg, "mandelbrot"))
 		f->fractal.type = 1;
 	else if (ft_strequ(arg, "julia"))
 		f->fractal.type = 2;
+	else if (ft_strequ(arg, "burningship"))
+		f->fractal.type = 3;
 	else
 	{
 		ft_putstr(arg);
@@ -59,7 +81,6 @@ void		fractol_update(t_fractol *f)
 	mlx_string_put(f->mlx.init, f->mlx.win, 10, 5, 0xFFFFFF, \
 		ft_itoa(f->fractal.iteration));
 	mlx_string_put(f->mlx.init, f->mlx.win, 10, 35, 0xFFFFFF, \
-		
 		ft_itoa((int)f->fractal.scale));
 }
 
@@ -93,6 +114,6 @@ int			main(int ac, char *av[])
 		mlx_loop(f->mlx.init);
 	}
 	else
-		write(1, "Loser\n", 6);
+		f_usage();
 	return (0);
 }
