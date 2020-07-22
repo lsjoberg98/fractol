@@ -6,7 +6,7 @@
 /*   By: lsjoberg <lsjoberg@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/01 13:57:43 by lsjoberg          #+#    #+#             */
-/*   Updated: 2020/06/18 14:09:20 by lsjoberg         ###   ########.fr       */
+/*   Updated: 2020/07/22 17:25:52 by lsjoberg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ static void		zoom_in(int x, int y, t_fractol *f)
 	f->fractal.y += ((f->fractal.scale * SCALE_PRECISION) / 2) - \
 		(y / (f->fractal.scale * SCALE_PRECISION));
 	f->fractal.scale *= SCALE_PRECISION;
-	// f->fractal.iteration += 1;
+	//  f->fractal.iteration += 1;
 }
 
 /*
@@ -61,14 +61,14 @@ static void		zoom_out(t_fractol *f)
 	f->fractal.y += ((f->fractal.scale / SCALE_PRECISION) / 2) - \
 		(f->mouse.pos_y / (f->fractal.scale / SCALE_PRECISION));
 	f->fractal.scale /= SCALE_PRECISION;
-	// f->fractal.iteration -= 1;
+	//  f->fractal.iteration -= 1;
 }
 
 static void		rand_color(t_fractol *f)
 {
 	f->color.red = rand() % (0x7F + 0x01);
-	f->color.green = rand() % (0x6F + 0x01);
-	f->color.blue = rand() % (0x4F + 0x01);
+	f->color.green = rand() % (0x7F + 0x01);
+	f->color.blue = rand() % (0x7F + 0x01);
 }
 
 int				frac_mouse(int mousecode, int x, int y, t_fractol *f)

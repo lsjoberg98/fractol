@@ -6,7 +6,7 @@
 /*   By: lsjoberg <lsjoberg@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/18 17:46:30 by lsjoberg          #+#    #+#             */
-/*   Updated: 2020/06/18 14:43:47 by lsjoberg         ###   ########.fr       */
+/*   Updated: 2020/07/22 17:30:42 by lsjoberg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,9 +34,9 @@ static void		put_pixel(t_fractol *f, int depth)
 	else if (f->fractal.height < WIN_WIDTH \
 		&& f->fractal.width < WIN_HEIGHT)
 	{
-		f->image.data[pos] = f->color.red + (depth * 2.42);
-		f->image.data[pos + 1] = f->color.green + (depth * 2.42);
-		f->image.data[pos + 2] = f->color.blue + (depth * 2.42);
+		f->image.data[pos] = f->color.red * (depth * .42);
+		f->image.data[pos + 1] = f->color.green * (depth * .42);
+		f->image.data[pos + 2] = f->color.blue * (depth * .42);
 	}
 }
 
