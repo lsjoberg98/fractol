@@ -6,7 +6,7 @@
 /*   By: lsjoberg <lsjoberg@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/17 20:57:14 by lsjoberg          #+#    #+#             */
-/*   Updated: 2020/07/22 17:48:09 by lsjoberg         ###   ########.fr       */
+/*   Updated: 2020/07/23 18:52:03 by lsjoberg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,10 @@ static int	selectf(char *arg, t_fractol *f)
 		f->fractal.type = 2;
 	else if (ft_strequ(arg, "burningship"))
 		f->fractal.type = 3;
+	else if (ft_strequ(arg, "sphere"))
+		f->fractal.type = 4;
+	else if (ft_strequ(arg, "test"))
+		f->fractal.type = 5;
 	else
 	{
 		ft_putstr(arg);
@@ -55,9 +59,9 @@ void		fractol_init(t_fractol *f)
 	f->fractal.y = -1.20;
 	f->fractal.scale = 300.00;
 	f->fractal.iteration = 42;
-	f->color.red = 0x42;
-	f->color.green = 0x32;
-	f->color.blue = 0x22;
+	f->color.red = 0x77;
+	f->color.green = 0x42;
+	f->color.blue = 0x42;
 	f->mouse.pos_x = WIN_WIDTH / 2;
 	f->mouse.pos_y = WIN_HEIGHT / 2;
 	if (f->fractal.type == 2)
@@ -66,6 +70,8 @@ void		fractol_init(t_fractol *f)
 		f->mouse.state = 1;
 		f->fractal.iteration = 100;
 	}
+	if (f->fractal.type == 4)
+		f->fractal.iteration  = 200;
 }
 
 /*

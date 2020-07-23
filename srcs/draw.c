@@ -6,7 +6,7 @@
 /*   By: lsjoberg <lsjoberg@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/18 17:46:30 by lsjoberg          #+#    #+#             */
-/*   Updated: 2020/07/22 17:30:42 by lsjoberg         ###   ########.fr       */
+/*   Updated: 2020/07/23 17:23:55 by lsjoberg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,6 +63,7 @@ static void		*draw_fractal(void *tab)
 			depth = (frac->fractal.type == 1) ? mandelbrot(frac) : depth;
 			depth = (frac->fractal.type == 2) ? julia(frac) : depth;
 			depth = (frac->fractal.type == 3) ? burningship(frac) : depth;
+			depth = (frac->fractal.type == 4) ? sphere(frac) : depth;
 			put_pixel(frac, depth);
 			frac->fractal.width += 1;
 		}

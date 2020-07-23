@@ -6,7 +6,7 @@
 /*   By: lsjoberg <lsjoberg@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/17 20:57:46 by lsjoberg          #+#    #+#             */
-/*   Updated: 2020/06/18 15:39:49 by lsjoberg         ###   ########.fr       */
+/*   Updated: 2020/07/23 19:04:54 by lsjoberg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,11 +28,11 @@
 # include "mouse.h"
 # include "libft.h"
 
-# define WIN_WIDTH			(1920)
-# define WIN_HEIGHT			(1080)
+# define WIN_WIDTH			(1080)
+# define WIN_HEIGHT			(720)
 # define THREADS			(8)
-# define TITLE(fractal)		(ft_strjoin("fractol - ", fractal))
-# define SCALE_LIMIT		(2000000000)
+# define TITLE(fractal)		(fractal)
+# define SCALE_LIMIT		(1500000000)
 # define SCALE_PRECISION	(1.042)
 
 typedef struct  s_mlx
@@ -101,5 +101,7 @@ int			f_manipulate(int x, int y, t_fractol *f);
 int			mandelbrot(t_fractol *f);
 int			julia(t_fractol *f);
 int			burningship(t_fractol *f);
+int         sphere(t_fractol *f);
+int			test(t_fractol *f);
 
 #endif
