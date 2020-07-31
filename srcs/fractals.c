@@ -6,7 +6,7 @@
 /*   By: lsjoberg <lsjoberg@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/12 16:05:49 by lsjoberg          #+#    #+#             */
-/*   Updated: 2020/07/23 17:24:31 by lsjoberg         ###   ########.fr       */
+/*   Updated: 2020/07/31 16:43:29 by lsjoberg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ int			julia(t_fractol *f)
 	ci = (f->mouse.pos_y - (320.0 / 2.0) - WIN_HEIGHT) \
 		/ (double)WIN_HEIGHT - 0.15;
 	zi = f->fractal.width / f->fractal.scale + f->fractal.y;
-	zr = f->fractal.height /f->fractal.scale + f->fractal.x;
+	zr = f->fractal.height / f->fractal.scale + f->fractal.x;
 	while (FT_SQUARE(zr) + FT_SQUARE(zi) < 4 \
 		&& f->fractal.depth < f->fractal.iteration)
 	{
@@ -86,28 +86,28 @@ int			burningship(t_fractol *f)
 	return (f->fractal.depth);
 }
 
-int                     sphere(t_fractol *f)
+int			sphere(t_fractol *f)
 {
-        double  zr;
-        double  zi;
-        double  cr;
-        double  ci;
-        double  tmp_zr;
+	double	zr;
+	double	zi;
+	double	cr;
+	double	ci;
+	double	tmp_zr;
 
-        f->fractal.depth = 0;
-        cr = (f->mouse.pos_x - (210.0 / 2.0) - WIN_WIDTH) \
-		/ ((double)WIN_WIDTH * 2) + 0.15;
-		ci = (f->mouse.pos_y - (320.0 / 2.0) - WIN_HEIGHT) \
-		/ (double)WIN_HEIGHT - 0.15;
-        zi = f->fractal.width / f->fractal.scale + f->fractal.y;
-        zr = f->fractal.height / f->fractal.scale + f->fractal.x;
-        while (FT_SQUARE(zr) + FT_SQUARE(zi) < 1 \
-                        && f->fractal.depth < f->fractal.iteration)
-        {
-                tmp_zr = zr;
-                zr = FT_SQUARE(zr) - FT_SQUARE(zi) + cr;
-                zi = fabs(zi) * fabs(tmp_zr) + ci;
-                f->fractal.depth += 1;
-        }
-        return (f->fractal.depth);
+	f->fractal.depth = 0;
+	cr = (f->mouse.pos_x - (210.0 / 2.0) - WIN_WIDTH) \
+	/ ((double)WIN_WIDTH * 2) + 0.15;
+	ci = (f->mouse.pos_y - (320.0 / 2.0) - WIN_HEIGHT) \
+	/ (double)WIN_HEIGHT - 0.15;
+	zi = f->fractal.width / f->fractal.scale + f->fractal.y;
+	zr = f->fractal.height / f->fractal.scale + f->fractal.x;
+	while (FT_SQUARE(zr) + FT_SQUARE(zi) < 1 \
+		&& f->fractal.depth < f->fractal.iteration)
+	{
+		tmp_zr = zr;
+		zr = FT_SQUARE(zr) - FT_SQUARE(zi) + cr;
+		zi = fabs(zi) * fabs(tmp_zr) + ci;
+		f->fractal.depth += 1;
+	}
+	return (f->fractal.depth);
 }
