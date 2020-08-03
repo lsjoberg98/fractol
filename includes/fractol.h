@@ -6,7 +6,7 @@
 /*   By: lsjoberg <lsjoberg@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/17 20:57:46 by lsjoberg          #+#    #+#             */
-/*   Updated: 2020/07/31 16:58:13 by lsjoberg         ###   ########.fr       */
+/*   Updated: 2020/08/03 12:47:33 by lsjoberg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@
 # include "libft.h"
 
 # define FT_SQUARE(x)		(x * x)
-# define WIN_WIDTH			(1280)
+# define WIN_WIDTH			(1080)
 # define WIN_HEIGHT			(720)
 # define THREADS			(8)
 # define TITLE(fractal)		(fractal)
