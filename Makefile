@@ -6,7 +6,7 @@
 #    By: lsjoberg <lsjoberg@student.hive.fi>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/02/21 15:56:04 by jaleman           #+#    #+#              #
-#    Updated: 2020/06/01 16:05:45 by lsjoberg         ###   ########.fr        #
+#    Updated: 2020/08/03 15:04:54 by lsjoberg         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -51,25 +51,69 @@ $(MINLBX):
 
 # Compiling
 $(NAME): $(OBJ)
-	@echo "(ﾉ◕ヮ◕)ﾉ*:・ﾟ✧ Compiling... Wait a sec."
+	@clear
+	@echo "*:・ﾟ✧*:・ﾟ✧ Compiling.   *:・✧*:・✧"
+	@sleep 0.5
+	@clear
+	@echo "*:・ﾟ✧*:・ﾟ✧ Compiling..  *:・✧*:・✧"
+	@sleep 0.5
+	@clear
+	@echo "*:・ﾟ✧*:・ﾟ✧ Compiling... *:・✧*:・✧"
+	@sleep 0.5
+	@clear
+	@echo "*:・ﾟ✧*:・ﾟ✧ Compiling..  *:・✧*:・✧"
+	@sleep 0.5
+	@clear
 	@gcc $(OBJ) $(LNK) -lm -o $(NAME)
-	@echo "(•̀ᴗ•́)و $(NAME) generated!"
+	@echo "*:・ﾟ✧*: $(NAME) generated *:・✧*:・✧"
+	@sleep 2
+	@echo 
+	@echo "Usage: ./fractol "
 
 # clean rule
 clean:
 	@rm -Rf $(OBJ_DIR)
 	@make -C $(LIBFT_DIR) clean
 	@make -C $(MINLBX_DIR) clean
-	@echo "¯\_(ツ)_/¯ Objects removed!"
+	@echo "(ツ) Objects removed! (ツ)"
 
 # fclean rule
 fclean: clean
 	@rm -f $(NAME)
 	@make -C $(LIBFT_DIR) fclean
-	@echo "(╯°□°）╯︵ ┻━┻ $(NAME) removed!"
+	@echo "(ツ) $(NAME) removed! (ツ)"
 
 # re rule
 re: fclean all
+
+# coffee rule
+coffee:
+	@clear
+	@echo ""
+	@echo "                   ("
+	@echo "	                     )     ("
+	@echo "               ___...(-------)-....___"
+	@echo '           .-""       )    (          ""-.'
+	@echo "      .-''''|-._             )         _.-|"
+	@echo '     /  .--.|   `""---...........---""`   |'
+	@echo "    /  /    |                             |"
+	@echo "    |  |    |                             |"
+	@echo "     \  \   |                             |"
+	@echo "      '\ '\ |                             |"
+	@echo "        '\ '|                             |"
+	@echo "        _/ /\                             /"
+	@echo "       (__/  \                           /"
+	@echo '    _..---""` \                         /`""---.._'
+	@echo " .-'           \                       /          '-."
+	@echo ":               '-.__             __.-'              :"
+	@echo ':                  ) ""---...---"" (                :'
+	@echo "\'._                '"--...___...--"'              _.'"
+	@echo '   \""--..__                              __..--""/'
+	@echo "     '._     """----.....______.....----"""         _.'"
+	@echo '         ""--..,,_____            _____,,..--"""'''
+	@echo '                      """------"""'
+	@sleep 2.5
+	@clear
 
 # phony
 .PHONY: all clean fclean re
