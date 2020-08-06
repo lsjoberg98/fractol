@@ -6,7 +6,7 @@
 /*   By: lsjoberg <lsjoberg@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/17 20:57:14 by lsjoberg          #+#    #+#             */
-/*   Updated: 2020/07/31 16:40:01 by lsjoberg         ###   ########.fr       */
+/*   Updated: 2020/08/06 15:54:11 by lsjoberg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 static void	f_usage(void)
 {
 	ft_putstr("Usage: ");
-	ft_putstr("./fractol mandelbrot | julia | burningship\n");
+	ft_putstr("./fractol mandelbrot | julia | burningship | sphere\n");
 	ft_putendl("Keys:");
 	ft_putendl("\t[E]               -> Zoom in");
 	ft_putendl("\t[Q]               -> Zoom out");
@@ -57,9 +57,9 @@ void		fractol_init(t_fractol *f)
 	f->fractal.y = -1.20;
 	f->fractal.scale = 300.00;
 	f->fractal.iteration = 42;
-	f->color.red = 0x69;
-	f->color.green = 0x42;
-	f->color.blue = 0x21;
+	f->color.red = 100;
+	f->color.green = 7;
+	f->color.blue = 58;
 	f->mouse.pos_x = WIN_WIDTH / 2;
 	f->mouse.pos_y = WIN_HEIGHT / 2;
 	if (f->fractal.type == 2)
@@ -89,6 +89,9 @@ void		fractol_update(t_fractol *f)
 	frac_pthread(f);
 	mlx_string_put(f->mlx.init, f->mlx.win, 10, 5, 0xFFFFFF, iter);
 	mlx_string_put(f->mlx.init, f->mlx.win, 10, 35, 0xFFFFFF, size);
+	mlx_string_put(f->mlx.init, f->mlx.win, 10, 65, 0xFFFFFF, ft_itoa(f->color.red));
+	mlx_string_put(f->mlx.init, f->mlx.win, 10, 95, 0xFFFFFF, ft_itoa(f->color.green));
+	mlx_string_put(f->mlx.init, f->mlx.win, 10, 125, 0xFFFFFF, ft_itoa(f->color.blue));
 	free(iter);
 	free(size);
 }

@@ -6,7 +6,7 @@
 #    By: lsjoberg <lsjoberg@student.hive.fi>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/02/21 15:56:04 by jaleman           #+#    #+#              #
-#    Updated: 2020/08/03 15:04:54 by lsjoberg         ###   ########.fr        #
+#    Updated: 2020/08/06 15:47:55 by lsjoberg         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -64,9 +64,12 @@ $(NAME): $(OBJ)
 	@echo "*:・ﾟ✧*:・ﾟ✧ Compiling..  *:・✧*:・✧"
 	@sleep 0.5
 	@clear
+	@echo "*:・ﾟ✧*:・ﾟ✧ Compiling.   *:・✧*:・✧"
+	@sleep 0.5
+	@clear
 	@gcc $(OBJ) $(LNK) -lm -o $(NAME)
 	@echo "*:・ﾟ✧*: $(NAME) generated *:・✧*:・✧"
-	@sleep 2
+	@sleep 1
 	@echo 
 	@echo "Usage: ./fractol "
 
@@ -75,18 +78,18 @@ clean:
 	@rm -Rf $(OBJ_DIR)
 	@make -C $(LIBFT_DIR) clean
 	@make -C $(MINLBX_DIR) clean
-	@echo "(ツ) Objects removed! (ツ)"
+	@echo " Objects removed!"
 
 # fclean rule
 fclean: clean
 	@rm -f $(NAME)
 	@make -C $(LIBFT_DIR) fclean
-	@echo "(ツ) $(NAME) removed! (ツ)"
+	@echo " $(NAME) removed! "
 
 # re rule
 re: fclean all
 
-# coffee rule
+# time for a coffee break
 coffee:
 	@clear
 	@echo ""
