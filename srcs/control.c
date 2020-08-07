@@ -6,7 +6,7 @@
 /*   By: lsjoberg <lsjoberg@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/01 13:57:43 by lsjoberg          #+#    #+#             */
-/*   Updated: 2020/07/23 19:05:14 by lsjoberg         ###   ########.fr       */
+/*   Updated: 2020/08/07 15:19:10 by lsjoberg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@
 ** Increase the scale of the fractal, depending of the mouse position (x and y),
 ** and increase the iteration level.
 ** Saves the position to x_pos and y_pos, used later by zoom_out() function.
-** If the fractal is a sphere or a pipi, the iterations won't increase. :/
 ** The zoom level is capped with the SCALE_LIMIT macro.
 */
 
@@ -25,6 +24,7 @@ static void		zoom_in(int x, int y, t_fractol *f)
 	if (f->fractal.scale >= SCALE_LIMIT)
 	{
 		f->fractal.scale = SCALE_LIMIT;
+		f->color.blue++;
 		return ;
 	}
 	if (f->mouse.state == 1)
@@ -41,12 +41,13 @@ static void		zoom_in(int x, int y, t_fractol *f)
 	f->fractal.y += ((f->fractal.scale * SCALE_PRECISION) / 2) - \
 		(y / (f->fractal.scale * SCALE_PRECISION));
 	f->fractal.scale *= SCALE_PRECISION;
+	if (f->fractal.type == 1 || f->fractal.type == 4)
+		f->color.red++;
 }
 
 /*
 ** Decrease the scale level and the iteration level.
 ** Uses the mouse position from zoom_in() function.
-** If the fractal is a sphere or a pipi, the iterations won't decrease. :/
 */
 
 static void		zoom_out(t_fractol *f)
@@ -60,6 +61,8 @@ static void		zoom_out(t_fractol *f)
 	f->fractal.y += ((f->fractal.scale / SCALE_PRECISION) / 2) - \
 		(f->mouse.pos_y / (f->fractal.scale / SCALE_PRECISION));
 	f->fractal.scale /= SCALE_PRECISION;
+	if (f->fractal.type == 1 || f->fractal.type == 4)
+		f->color.red--;
 }
 
 static void		rand_color(t_fractol *f)
