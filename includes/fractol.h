@@ -6,7 +6,7 @@
 /*   By: lsjoberg <lsjoberg@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/17 20:57:46 by lsjoberg          #+#    #+#             */
-/*   Updated: 2020/08/03 12:47:33 by lsjoberg         ###   ########.fr       */
+/*   Updated: 2020/08/07 13:44:00 by lsjoberg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,6 +93,7 @@ int				frac_mouse(int mousecode, int x, int y, t_fractol *f);
 
 void			frac_pthread(t_fractol *f);
 int				f_manipulate(int x, int y, t_fractol *f);
+void			color_change(t_fractol *f);
 
 int				mandelbrot(t_fractol *f);
 int				julia(t_fractol *f);
