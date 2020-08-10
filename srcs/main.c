@@ -6,7 +6,7 @@
 /*   By: lsjoberg <lsjoberg@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/17 20:57:14 by lsjoberg          #+#    #+#             */
-/*   Updated: 2020/08/07 15:05:59 by lsjoberg         ###   ########.fr       */
+/*   Updated: 2020/08/10 13:16:45 by lsjoberg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,9 +57,9 @@ void		fractol_init(t_fractol *f)
 	f->fractal.y = -1.20;
 	f->fractal.scale = 300.00;
 	f->fractal.iteration = 42;
-	f->color.red = 19;
-	f->color.green = -200;
-	f->color.blue = 42;
+	f->color.red = 4;
+	f->color.green = 6;
+	f->color.blue = 15;
 	f->mouse.pos_x = WIN_WIDTH / 2;
 	f->mouse.pos_y = WIN_HEIGHT / 2;
 	if (f->fractal.type == 2)

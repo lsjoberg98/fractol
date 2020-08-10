@@ -6,7 +6,7 @@
 /*   By: lsjoberg <lsjoberg@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/18 17:46:30 by lsjoberg          #+#    #+#             */
-/*   Updated: 2020/08/07 15:01:54 by lsjoberg         ###   ########.fr       */
+/*   Updated: 2020/08/10 13:49:57 by lsjoberg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 /*
 ** Put a pixel in a specific position defined by the draw_fractal() function.
 ** Change colors depending on the iteration level.
-** If the iteration level is equal to the fractal depth, paint it black ;)
+** If the iteration level is equal to the fractal depth, paint it black.
 */
 
 static void		put_pixel(t_fractol *f, int depth)
