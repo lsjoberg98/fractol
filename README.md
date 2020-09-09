@@ -29,8 +29,8 @@ $> ./fractol sphere
 
 </p>
 <p float="left">
-  <img src="/screens/Screen1.png" width="350" />
-  <img src="/screens/Screen2.png" width="350"/> 
-  <img src="/screens/Screen3.png" width="350"/>
+  <img src="/screens/Screen1.png" width="500" />
+  <img src="/screens/Screen3.png" width="500"/>
 </p>
+<img src="/screens/Screen2.png" width="1000"/> 
 
