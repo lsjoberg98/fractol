@@ -4,8 +4,8 @@
 
 
 <p float="left">
-  <img src="/screens/Screen1.png" width="300" />
+  <img src="/screens/Screen1.png" width="250" />
   <img src="/screens/Screen2.png" width="300/> 
-  <img src="/screens/Screen3.png" width="300" />
+  <img src="/screens/Screen3.png" width="250"/>
 </p>
 
