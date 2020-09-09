@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   control.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lsjoberg <lsjoberg@student.hive.fi>        +#+  +:+       +#+        */
+/*   By: lsjoberg <lsjoberg@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/01 13:57:43 by lsjoberg          #+#    #+#             */
-/*   Updated: 2020/08/10 11:18:42 by lsjoberg         ###   ########.fr       */
+/*   Updated: 2020/09/09 16:58:34 by lsjoberg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,11 +80,9 @@ int				frac_mouse(int mousecode, int x, int y, t_fractol *f)
 			zoom_in(x, y, f);
 		else if (mousecode == MOUSE_DOWN_SCRLL)
 			zoom_out(f);
-		else if (mousecode == MOUSE_MIDDLE_CLK)
-			fractol_init(f);
 		else if (mousecode == MOUSE_RIGHT_CLK)
 			rand_color(f);
-		else if (mousecode == MOUSE_LEFT_CLK)
+		else if (mousecode == MOUSE_MIDDLE_CLK)
 			f->mouse.state = (f->mouse.state == 1) ? 0 : 1;
 		fractol_update(f);
 	}
