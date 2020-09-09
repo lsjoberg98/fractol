@@ -4,10 +4,8 @@
 
 
 <p float="left">
-  <img src="/screens/Screen1.png" width="100" />
-  <img src="/screens/Screen2.png" /> 
-  <img src="/screens/Screen3.png" width="100" />
+  <img src="/screens/Screen1.png" width="300" />
+  <img src="/screens/Screen2.png" width="300/> 
+  <img src="/screens/Screen3.png" width="300" />
 </p>
-![screenshot](/screens/Screen1.png?raw=true)
-![screenshot](/screens/Screen2.png?raw=true)
-![screenshot](/screens/Screen3.png?raw=true)
+
