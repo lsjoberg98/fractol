@@ -19,7 +19,7 @@ Different colors patterns.
 ## How to use ?
 
 ```
-$> make
+$> make re
 $> ./fractol mandelbrot
 $> ./fractol julia
 $> ./fractol burningship
