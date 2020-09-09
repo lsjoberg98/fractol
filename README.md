@@ -1,6 +1,6 @@
 # fractol
 
-<p float="center" :rotating_light:"WARNING: This program may potentially trigger seizures for people with photosensitive epilepsy. Viewer discretion is advised.":rotating_light:
+<p float="center"> :rotating_light:"WARNING: This program may potentially trigger seizures for people with photosensitive epilepsy. Viewer discretion is advised.":rotating_light:
 
 </p>
 <p float="left">
