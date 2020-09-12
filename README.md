@@ -21,7 +21,8 @@ Different colors patterns.
 ```
 $> git clone https://github.com/lsjoberg98/fractol.git fractol
 $> cd fractol
-// now you can re-compile the project with make re, due to issues with Minilibx I have decided to add the executable to my repository incase you can't compile it.
+// now you can re-compile the project with make re, due to issues with Minilibx 
+// I have decided to add the executable to my repository incase you can't compile it.
 $> make re
 $> ./fractol mandelbrot
 $> ./fractol julia
