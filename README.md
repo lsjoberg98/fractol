@@ -27,8 +27,8 @@ $> ./fractol sphere
 ```
 
 <p float="left">
-  <img src="/screens/Screen1.png" width="1000" />
-  <img src="/screens/Screen3.png" width="1000"/>
+  <img src="/screens/Screen1.png" width="450" />
+  <img src="/screens/Screen3.png" width="450"/>
 </p>
 <img src="/screens/Screen2.png" width="1000"/> 
 
