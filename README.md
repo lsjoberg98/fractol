@@ -14,7 +14,7 @@ A fractal is a never-ending pattern. Fractals are infinitely complex patterns th
 Multiple fractals : Mandelbrot, Julia, BurningShip, Sphere.
 Increase and decrease max iteration for shape calculation.
 Zoom and unzoom.
-Different colors patterns.
+Different color patterns.
 
 ## How to use ?
 
