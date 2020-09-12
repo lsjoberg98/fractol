@@ -1,5 +1,5 @@
 
-# Fractol
+# Fract'ol
 [Hive](https://www.hive.fi/en/) project.
 
 <p float="center"> :rotating_light:"WARNING: This program may potentially trigger seizures for people with photosensitive epilepsy. Viewer discretion is advised.":rotating_light:
@@ -19,6 +19,9 @@ Different colors patterns.
 ## How to use ?
 
 ```
+$> git clone https://github.com/lsjoberg98/fractol.git fractol
+$> cd fractol
+// now you can re-compile the project with make re, due to issues with Minilibx I have decided to add the executable to my repository incase you can't compile it.
 $> make re
 $> ./fractol mandelbrot
 $> ./fractol julia
